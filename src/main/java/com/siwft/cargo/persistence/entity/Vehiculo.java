@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Entity
@@ -32,5 +34,11 @@ public class Vehiculo {
     @Size(max = 50)
     @Column(name = "marca", length = 50)
     private String marca;
+
+    @Column(name = "lat")
+    private BigDecimal lat;
+
+    @Column(name = "lng")
+    private BigDecimal lng;
 
 }

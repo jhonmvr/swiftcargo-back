@@ -47,5 +47,11 @@ public class Usuario {
     @Size(max = 255)
     @Column(name = "direccion")
     private String direccion;
+    @Size(max = 255)
+    @Column(name = "token_notificacion")
+    private String tokenNotificacion;
+    @Size(max = 10)
+    @Column(name = "identificacion")
+    private String identificacion;
 
 }

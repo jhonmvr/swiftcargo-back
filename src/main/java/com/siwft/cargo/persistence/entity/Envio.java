@@ -1,11 +1,13 @@
 package com.siwft.cargo.persistence.entity;
 
+import com.siwft.cargo.persistence.enums.EstadoEnvio;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 
 @Getter
@@ -46,22 +48,23 @@ public class Envio {
 
     @NotNull
     @Column(name = "lat_destino", nullable = false)
-    private Integer latDestino;
+    private BigDecimal latDestino;
 
     @NotNull
     @Column(name = "lng_destino", nullable = false)
-    private Integer lngDestino;
+    private BigDecimal lngDestino;
 
     @NotNull
     @Column(name = "lat_inicio", nullable = false)
-    private Integer latInicio;
+    private BigDecimal latInicio;
 
     @NotNull
     @Column(name = "lng_inicio", nullable = false)
-    private Integer lngInicio;
+    private BigDecimal lngInicio;
 
+    @Enumerated(EnumType.STRING)
     @Size(max = 50)
     @Column(name = "estado", length = 50)
-    private String estado;
+    private EstadoEnvio estado;
 
 }
